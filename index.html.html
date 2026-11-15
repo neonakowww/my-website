@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sound & Soul — Как музыка влияет на тебя</title>
+<style>
+:root{--bg:#080b1c;--panel:#111632;--panel2:#171d40;--blue:#62c7ff;--purple:#a98bff;--pink:#e1a4ff;--text:#f4f2ff;--muted:#b5bad6;--line:#303961;--good:#79e0c0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 10%,#20245a 0,transparent 32%),radial-gradient(circle at 90% 35%,#29194f 0,transparent 30%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;min-height:100vh}
+body:before{content:"♫  ♪  ♬  ♩  ♫";position:fixed;inset:0;pointer-events:none;color:#9c8cff;opacity:.055;font-size:clamp(45px,8vw,110px);letter-spacing:45px;line-height:2.1;transform:rotate(-12deg);z-index:0;overflow:hidden}
+header,main,footer{position:relative;z-index:1}.topbar{max-width:1120px;margin:auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:900;letter-spacing:1px;font-size:20px}.brand span{color:var(--blue)}nav{display:flex;gap:10px;flex-wrap:wrap}button{font:inherit;cursor:pointer;border:0;transition:.2s}nav button,.secondary{background:transparent;border:1px solid var(--line);color:var(--text);padding:10px 15px;border-radius:12px}nav button:hover,.secondary:hover{border-color:var(--blue);background:#1a2345}.wrap{max-width:940px;margin:0 auto;padding:24px}.hero{min-height:72vh;display:grid;place-items:center;text-align:center}.hero-inner{max-width:760px}.eyebrow{color:var(--blue);font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:800}.hero h1{font-size:clamp(38px,7vw,68px);line-height:1.04;margin:18px 0;background:linear-gradient(90deg,#fff,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:18px;line-height:1.75}.note{font-size:54px;color:var(--purple);margin:8px}.primary{background:linear-gradient(110deg,#398fe8,#8762e9);color:white;padding:15px 27px;border-radius:14px;font-weight:800;box-shadow:0 10px 30px #5269dc35}.primary:hover{transform:translateY(-2px);filter:brightness(1.12)}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px}.feature,.card{background:linear-gradient(145deg,#171d3d,#10152d);border:1px solid var(--line);border-radius:18px;padding:20px}.feature b{display:block;margin:8px 0}.feature p,.muted{color:var(--muted);line-height:1.6;font-size:14px}.hidden{display:none!important}.page-head{margin:28px 0}.page-head h2{font-size:clamp(28px,4vw,42px);margin:8px 0}.progress-shell{height:9px;background:#252d50;border-radius:20px;overflow:hidden;margin:20px 0 8px}.progress{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .3s}.progress-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}.question{margin:18px 0;padding:24px}.qnum{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:2px}.question h3{font-size:20px;line-height:1.45;margin:10px 0 18px}.options{display:grid;gap:10px}.option{display:flex;align-items:flex-start;gap:12px;text-align:left;padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:#0d1330;color:var(--text);line-height:1.45}.option:hover{border-color:var(--purple);background:#1a2044}.option.selected{border-color:var(--blue);background:#1a2b50;box-shadow:inset 0 0 0 1px var(--blue)}.option .dot{width:17px;height:17px;flex:0 0 17px;border:2px solid #7f8bb9;border-radius:50%;margin-top:1px}.option.selected .dot{border:5px solid var(--blue)}.actions{display:flex;justify-content:space-between;gap:12px;margin:24px 0 60px}.actions button:disabled{opacity:.35;cursor:not-allowed}.result-hero{padding:30px;text-align:center;background:linear-gradient(145deg,#1c2b55,#291c50);border:1px solid #55508a;border-radius:24px}.type-icon{font-size:56px}.result-hero h2{font-size:clamp(28px,5vw,44px);margin:10px}.result-hero p{color:#d4d7f2;line-height:1.7;max-width:700px;margin:10px auto}.score-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0}.score-card{padding:20px;background:#111832;border:1px solid var(--line);border-radius:16px}.score-top{display:flex;justify-content:space-between;gap:10px;font-weight:700}.bar{height:9px;background:#2b3155;border-radius:20px;margin-top:12px;overflow:hidden}.bar i{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,var(--blue),var(--purple))}.result-section{margin:18px 0;padding:24px}.result-section h3{margin-top:0;color:#c9c0ff}.result-section p,.result-section li{color:#d0d4ed;line-height:1.75}.tag{display:inline-block;padding:7px 11px;margin:4px;border-radius:20px;background:#202b50;border:1px solid #394979;color:#c7eaff;font-size:13px}.disclaimer{font-size:12px;color:#929aba;line-height:1.6;margin-top:24px}.footer{text-align:center;color:#8e96bd;padding:28px 16px;font-size:12px}
+@media(max-width:650px){.features,.score-grid{grid-template-columns:1fr}.topbar{align-items:flex-start;flex-direction:column}.wrap{padding:17px}.question{padding:18px}.hero p{font-size:16px}.actions button{padding:13px 16px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">♫ SOUND <span>&</span> SOUL</div>
+  <nav>
+    <button type="button" onclick="goHome()">Главная</button>
+    <button type="button" onclick="showAbout()">О проекте</button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+ <div class="hero-inner">
+  <div class="note">♫ ♪ ♬</div>
+  <div class="eyebrow">Психология музыки · Самопознание</div>
+  <h1>Как музыка влияет на твою жизнь?</h1>
+  <p>Музыка — не просто фон. Она может менять настроение, помогать сосредоточиться, возвращать воспоминания и выражать то, что трудно сказать словами. Пройди подробный опрос и узнай, какую роль музыка играет именно в твоей жизни.</p>
+  <button class="primary" onclick="startTest()">Начать тест&nbsp; →</button>
+  <div class="features">
+   <div class="feature"><div class="note">♫</div><b>Твои музыкальные привычки</b><p>Что, где и в какие моменты ты слушаешь.</p></div>
+   <div class="feature"><div class="note">☾</div><b>Эмоции и настроение</b><p>Как музыка помогает переживать разные состояния.</p></div>
+   <div class="feature"><div class="note">✧</div><b>Подробный профиль</b><p>Персональный разбор сильных сторон и музыкального поведения.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="wrap hidden">
+ <div class="page-head"><div class="eyebrow">О проекте</div><h2>Зачем проходить этот опрос?</h2></div>
+ <div class="card"><p class="muted" style="font-size:16px">Sound & Soul помогает осознать, как музыка связана с твоими эмоциями, повседневными привычками, общением, памятью и концентрацией. После ответов сайт сразу сформирует развёрнутый профиль на основе выбранных вариантов.</p><p class="muted" style="font-size:16px">Здесь нет правильных или неправильных ответов. Выбирай то, что действительно похоже на тебя. Опрос носит развлекательный и рефлексивный характер: это не клиническая диагностика и не научно валидированный аналог MBTI.</p><button class="primary" onclick="startTest()">Перейти к тесту →</button></div>
+</section>
+
+<section id="quiz" class="wrap hidden">
+ <div class="page-head"><div class="eyebrow">Твой музыкальный портрет</div><h2>Отвечай честно — это про тебя</h2><p class="muted">Выбери один наиболее подходящий ответ на каждый вопрос. Всего 30 вопросов.</p></div>
+ <div class="progress-meta"><span id="progressText">Вопрос 1 из 30</span><span id="progressPct">3%</span></div>
+ <div class="progress-shell"><div class="progress" id="progressBar"></div></div>
+ <div id="questionHost"></div>
+ <div class="actions"><button class="secondary" id="prevBtn" onclick="prevQuestion()">← Назад</button><button class="primary" id="nextBtn" onclick="nextQuestion()">Далее →</button></div>
+</section>
+
+<section id="results" class="wrap hidden">
+ <div class="page-head"><div class="eyebrow">Твой результат</div><h2>Музыка в твоей жизни</h2></div>
+ <div id="resultContent"></div>
+ <div class="actions"><button class="secondary" onclick="goHome()">⌂ Главная</button><button class="primary" onclick="restartTest()">Пройти заново ↻</button></div>
+</section>
+</main>
+<footer class="footer">SOUND & SOUL · Узнай себя через музыку ♫</footer>
+
+<script>
+const questions = [
+{cat:"habits",q:"1. Как часто ты слушаешь музыку?",a:["Почти постоянно — музыка сопровождает мой день","Каждый день, но в определённые моменты","Несколько раз в неделю","Редко, только когда появляется желание"]},
+{cat:"habits",q:"2. Сколько времени в среднем ты слушаешь музыку за день?",a:["Более 3 часов","От 1 до 3 часов","От 30 минут до часа","Меньше 30 минут или совсем не каждый день"]},
+{cat:"habits",q:"3. Что ты чаще всего выбираешь?",a:["Поп, танцевальную музыку, хиты","Рэп, хип-хоп, R&B","Рок, металл, альтернативу","Электронную, инструментальную, классику или разные жанры"]},
+{cat:"habits",q:"4. Насколько разнообразен твой музыкальный вкус?",a:["Слушаю почти всё — зависит от настроения","Есть несколько любимых жанров","Предпочитаю один-два жанра","Редко ищу новую музыку, слушаю знакомое"]},
+{cat:"habits",q:"5. Как ты обычно находишь новые песни?",a:["Плейлисты, рекомендации и соцсети","Советы друзей и знакомых","Фильмы, игры, сериалы и видео","Почти не ищу — возвращаюсь к любимым трекам"]},
+{cat:"habits",q:"6. Что для тебя важнее всего в песне?",a:["Текст и смысл слов","Мелодия и звучание","Ритм, энергия и бит","Атмосфера и чувства, которые она вызывает"]},
+{cat:"habits",q:"7. Как часто ты переслушиваешь одну и ту же песню?",a:["Могу поставить её на повтор десятки раз","Часто возвращаюсь к любимым трекам","Иногда, если песня особенно понравилась","Предпочитаю постоянно слушать что-то новое"]},
+{cat:"moments",q:"8. Когда ты чаще всего включаешь музыку?",a:["С самого утра и почти до сна","Во время дороги или прогулок","Во время учёбы, работы или домашних дел","Вечером, когда отдыхаю"]},
+{cat:"moments",q:"9. Что ты обычно делаешь, слушая музыку?",a:["Полностью погружаюсь в неё","Занимаюсь делами параллельно","Общаюсь, гуляю или еду куда-то","Музыка просто играет фоном"]},
+{cat:"moments",q:"10. Слушаешь ли ты музыку в одиночестве?",a:["Да, это моё личное пространство","Часто, но также люблю слушать с другими","Редко — чаще с друзьями или близкими","Мне не принципиально, один я или нет"]},
+{cat:"moments",q:"11. Включаешь ли музыку перед важным событием?",a:["Да, чтобы настроиться и почувствовать уверенность","Иногда, если нужно взбодриться","Редко задумываюсь об этом","Нет, предпочитаю тишину"]},
+{cat:"moments",q:"12. Какую музыку ты выбираешь для дороги или прогулки?",a:["Энергичную, чтобы идти в ритме","Спокойную и атмосферную","Зависит от настроения и места","Обычно слушаю подкасты или ничего"]},
+{cat:"moments",q:"13. Нужна ли тебе музыка во время учёбы или работы?",a:["Да, без неё сложнее сосредоточиться","Иногда помогает, особенно без слов","Зависит от задачи","Нет, музыка меня отвлекает"]},
+{cat:"moments",q:"14. Как ты относишься к тишине?",a:["Часто хочется заполнить её музыкой","Люблю и музыку, и тишину","Тишина помогает мне восстановиться","Мне комфортнее, когда вокруг есть звуки"]},
+{cat:"emotion",q:"15. Что происходит с тобой, когда звучит любимая песня?",a:["Настроение заметно улучшается","Появляется энергия и желание действовать","Возникают воспоминания и сильные чувства","Просто наслаждаюсь звучанием"]},
+{cat:"emotion",q:"16. Что ты включаешь, когда грустно?",a:["Грустные песни — чтобы прожить эмоции","Весёлую и бодрую музыку, чтобы отвлечься","Спокойную, мягкую и поддерживающую","Ничего — предпочитаю тишину"]},
+{cat:"emotion",q:"17. Помогает ли музыка справляться со стрессом?",a:["Да, это один из главных способов успокоиться","Иногда, в зависимости от песни","Скорее помогает отвлечься, чем успокоиться","Почти не влияет на стресс"]},
+{cat:"emotion",q:"18. Бывает ли, что песня точно описывает твои чувства?",a:["Очень часто — будто её написали обо мне","Иногда, в особенные периоды","Редко, я больше обращаю внимание на звук","Почти никогда"]},
+{cat:"emotion",q:"19. Насколько сильно музыка может изменить твоё настроение?",a:["Очень сильно — иногда достаточно одной песни","Заметно, но ненадолго","Немного, скорее создаёт фон","Почти никак"]},
+{cat:"emotion",q:"20. Что ты чувствуешь от очень энергичной музыки?",a:["Подъём, мотивацию и уверенность","Радость и желание двигаться","Перегрузку, если слишком громко или быстро","Зависит от моего исходного настроения"]},
+{cat:"memory",q:"21. Связаны ли у тебя песни с определёнными людьми или событиями?",a:["Да, многие песни возвращают меня в прошлое","Есть несколько особенно важных треков","Иногда замечаю такие ассоциации","Почти не связываю музыку с воспоминаниями"]},
+{cat:"memory",q:"22. Случалось ли услышать песню и сразу вспомнить конкретный момент жизни?",a:["Да, очень ярко, словно снова там оказался(ась)","Да, но воспоминание быстро проходит","Редко","Не припоминаю такого"]},
+{cat:"memory",q:"23. Как ты относишься к песням из детства или прошлого?",a:["Они вызывают сильную ностальгию","Люблю иногда к ним возвращаться","Слушаю, если случайно попадутся","Предпочитаю современную музыку"]},
+{cat:"social",q:"24. Любишь делиться любимой музыкой?",a:["Да, отправляю песни, которые отражают мои чувства","Часто советую треки друзьям","Только если меня об этом спрашивают","Обычно оставляю музыку при себе"]},
+{cat:"social",q:"25. Насколько для тебя важна музыка на встречах и вечеринках?",a:["Очень важна — она создаёт атмосферу","Это приятная часть события","Не особо важна, главное — общение","Предпочитаю спокойные встречи без громкой музыки"]},
+{cat:"social",q:"26. Может ли музыкальный вкус стать поводом для знакомства?",a:["Да, общая музыка сразу сближает","Иногда это хорошая тема для разговора","Не думаю, что это сильно влияет","Для меня важнее другие общие интересы"]},
+{cat:"identity",q:"27. Насколько музыка отражает твою личность?",a:["Очень сильно — мой плейлист многое обо мне говорит","В некоторых песнях я узнаю себя","Это скорее развлечение, чем отражение личности","Не связываю музыкальный вкус со своей личностью"]},
+{cat:"identity",q:"28. Что лучше всего описывает твой музыкальный плейлист?",a:["Эмоциональный дневник разных периодов жизни","Микс для энергии, движения и активности","Спокойное пространство для отдыха и мыслей","Сборник любимых хитов без особой системы"]},
+{cat:"identity",q:"29. Если бы музыка была твоим спутником, какой ролью она стала бы?",a:["Другом, который понимает без слов","Мотиватором, который заряжает на действия","Местом, где можно спрятаться и отдохнуть","Фоном, который делает жизнь ярче"]},
+{cat:"identity",q:"30. Какое утверждение ближе всего тебе?",a:["Музыка помогает мне лучше понимать себя","Музыка помогает мне управлять энергией и настроением","Музыка объединяет меня с людьми и воспоминаниями","Музыка — приятная часть жизни, но не её центр"]}
+];
+const state={answers:Array(questions.length).fill(null),index:0};
+const categories={habits:"Музыкальные привычки",moments:"Контекст прослушивания",emotion:"Эмоциональное влияние",memory:"Память и ассоциации",social:"Социальная роль",identity:"Связь с личностью"};
+function show(id){["home","about","quiz","results"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));window.scrollTo({top:0,behavior:"smooth"});}
+function goHome(){show("home")}
+function showAbout(){show("about")}
+function startTest(){state.index=0;show("quiz");renderQuestion()}
+function renderQuestion(){
+ const q=questions[state.index],chosen=state.answers[state.index];
+ document.getElementById("progressText").textContent=`Вопрос ${state.index+1} из ${questions.length}`;
+ const pct=Math.round((state.index+1)/questions.length*100);
+ document.getElementById("progressPct").textContent=pct+"%";
+ document.getElementById("progressBar").style.width=pct+"%";
+ document.getElementById("questionHost").innerHTML=`<div class="card question"><div class="qnum">${categories[q.cat].toUpperCase()} · ${String(state.index+1).padStart(2,"0")}</div><h3>${q.q}</h3><div class="options">${q.a.map((a,i)=>`<button type="button" class="option ${chosen===i?"selected":""}" onclick="selectAnswer(${i})"><span class="dot"></span><span>${a}</span></button>`).join("")}</div></div>`;
+ document.getElementById("prevBtn").disabled=state.index===0;
+ document.getElementById("nextBtn").textContent=state.index===questions.length-1?"Узнать результат ✨":"Далее →";
+ document.getElementById("nextBtn").disabled=chosen===null;
+}
+function selectAnswer(i){state.answers[state.index]=i;renderQuestion()}
+function nextQuestion(){if(state.answers[state.index]===null)return;if(state.index<questions.length-1){state.index++;renderQuestion()}else makeResult()}
+function prevQuestion(){if(state.index>0){state.index--;renderQuestion()}}
+function restartTest(){state.answers.fill(null);state.index=0;startTest()}
+function makeResult(){
+ const groups={habits:[],moments:[],emotion:[],memory:[],social:[],identity:[]};
+ questions.forEach((q,i)=>groups[q.cat].push(state.answers[i]));
+ const totals={};Object.keys(groups).forEach(k=>{const vals=groups[k];totals[k]=Math.round(vals.reduce((s,v)=>s+(3-v),0)/(vals.length*3)*100)});
+ const avg=Math.round(Object.values(totals).reduce((a,b)=>a+b,0)/6);
+ const labels={habits:["Исследователь звучания","Избирательный слушатель","Ценитель любимого"],moments:["Музыка — часть ритма дня","Слушатель по настроению","Любитель тишины и баланса"],emotion:["Эмоциональный резонатор","Чуткий слушатель","Спокойный наблюдатель"],memory:["Хранитель музыкальных воспоминаний","Ассоциативный слушатель","Живёшь настоящим моментом"],social:["Музыкальный объединитель","Делишься музыкой выборочно","Личный музыкальный мир"],identity:["Музыка как часть идентичности","Музыка как отражение моментов","Музыка как удовольствие"]};
+ const desc={
+ habits:["Ты активно исследуешь музыку: пробуешь новое, собираешь впечатления и легко находишь звучание под разные ситуации.","Ты выбираешь музыку осознанно. У тебя есть предпочтения, но ты не обязан(а) слушать её постоянно.","Ты ценишь отдельные песни и исполнителей, но не стремишься превращать музыку в постоянный фон."],
+ moments:["Музыка встроена в твой распорядок и помогает переключаться между делами, отдыхом и активностью.","Ты включаешь музыку тогда, когда она действительно подходит моменту. Для тебя важен баланс.","Ты умеешь обходиться без музыкального сопровождения и, вероятно, ценишь тишину как отдельное пространство."],
+ emotion:["Музыка для тебя — мощный эмоциональный инструмент. Она может поддержать, вдохновить и помочь прожить чувства.","Ты замечаешь влияние музыки на настроение, но её эффект зависит от ситуации и твоего внутреннего состояния.","Ты воспринимаешь музыку скорее как звуковое сопровождение или эстетическое удовольствие, чем как способ регулировать эмоции."],
+ memory:["Песни становятся для тебя своеобразными капсулами времени. Знакомое звучание может возвращать людей, места и события.","Музыкальные воспоминания занимают заметное, но не центральное место в твоём опыте.","Ты меньше привязываешь музыку к прошлому и чаще воспринимаешь её здесь и сейчас."],
+ social:["Музыка — один из способов сближения. Ты можешь выражать себя через песни и находить общие темы с людьми.","Ты делишься музыкой, когда чувствуешь подходящий момент и близость с собеседником.","Твой музыкальный мир в большей степени личный: тебе не обязательно показывать его окружающим."],
+ identity:["Музыкальные предпочтения тесно связаны с тем, как ты ощущаешь и выражаешь себя. Плейлист может быть частью твоей истории.","Некоторые песни точно отражают твои состояния и взгляды, хотя музыка не определяет тебя целиком.","Ты не склонен(на) делать музыкальный вкус главным способом самоописания — и это тоже полноценное отношение к музыке."]
+ };
+ const keys=Object.keys(totals).sort((a,b)=>totals[b]-totals[a]);
+ const top=keys[0],low=keys[keys.length-1];
+ const bands=keys.map(k=>`<div class="score-card"><div class="score-top"><span>${categories[k]}</span><span>${totals[k]}%</span></div><div class="bar"><i style="width:${totals[k]}%"></i></div><p class="muted">${desc[k][totals[k]>=67?0:totals[k]>=34?1:2]}</p></div>`).join("");
+ const topThree=keys.slice(0,3).map(k=>`<span class="tag">${categories[k]}</span>`).join("");
+ const title=avg>=75?"Музыкальная вселенная":avg>=55?"Глубокая связь с музыкой":avg>=35?"Гибкий музыкальный баланс":"Независимый слушатель";
+ const intro=avg>=75?"Музыка занимает заметное место в твоей повседневности и внутреннем мире. Ты используешь её не только для развлечения: она сопровождает переживания, помогает создавать атмосферу и связывает разные стороны жизни.":avg>=55?"Музыка — важная часть твоего опыта, хотя ты сохраняешь собственный баланс. Ты умеешь находить в ней подходящий ресурс для настроения, отдыха или общения.":avg>=35?"Твоя связь с музыкой умеренная и гибкая. В одних обстоятельствах она становится важной, в других ты спокойно обходишься без неё.":"Ты воспринимаешь музыку скорее как дополнительную часть жизни. Тишина, другие занятия или личные способы переключения могут быть для тебя не менее ценными.";
+ const suggestions=[];
+ if(totals.emotion>=60)suggestions.push("Собирай отдельные плейлисты под разные состояния — для восстановления, концентрации и радости. Замечай, какая музыка действительно помогает, а какая усиливает переживания.");
+ else suggestions.push("Попробуй иногда осознанно выбирать музыку под настроение и отмечать, меняется ли твоё состояние после прослушивания.");
+ if(totals.moments>=60)suggestions.push("Понаблюдай, в какие моменты музыка помогает тебе, а когда становится отвлекающим фоном. Иногда полезно оставлять место тишине.");
+ if(totals.memory>=60)suggestions.push("Создай плейлист воспоминаний: добавь песни, связанные с важными периодами, людьми и событиями.");
+ if(totals.social<35)suggestions.push("Если захочется, поделись одной значимой для тебя песней с близким человеком — это может стать необычным способом рассказать о себе.");
+ if(totals.habits<35)suggestions.push("Попробуй открыть один новый жанр или исполнителя вне привычного списка — возможно, найдёшь неожиданное звучание.");
+ document.getElementById("resultContent").innerHTML=`
+ <div class="result-hero"><div class="type-icon">♫</div><div class="eyebrow">ТВОЙ МУЗЫКАЛЬНЫЙ ТИП</div><h2>${title}</h2><p>${intro}</p><div class="tag">Индекс вовлечённости: ${avg}%</div></div>
+ <div class="card result-section"><h3>Твой профиль в шести измерениях</h3><p>Проценты показывают выраженность музыкальной вовлечённости по ответам в каждой теме. Это описательные индексы, а не оценка личности или психического здоровья.</p><div class="score-grid">${bands}</div></div>
+ <div class="card result-section"><h3>Твои ведущие особенности</h3><p>Наиболее выраженные стороны твоего музыкального опыта:</p>${topThree}<p><b>Самая яркая область — ${categories[top]}.</b> ${desc[top][totals[top]>=67?0:totals[top]>=34?1:2]}</p><p><b>Менее выраженная область — ${categories[low]}.</b> Это не недостаток: возможно, музыка просто не играет здесь главную роль.</p></div>
+ <div class="card result-section"><h3>Как музыка может проявляться в твоей жизни</h3><ul><li><b>Настроение:</b> прислушивайся, какие треки дают энергию, а какие помогают замедлиться.</li><li><b>Повседневность:</b> замечай, в каких делах музыка поддерживает ритм, а где мешает сосредоточиться.</li><li><b>Память:</b> знакомые мелодии могут быть связаны с личными воспоминаниями и ассоциациями.</li><li><b>Общение:</b> музыкальные предпочтения могут стать способом делиться впечатлениями и находить общий язык.</li></ul></div>
+ <div class="card result-section"><h3>Персональные идеи для тебя</h3><ul>${suggestions.map(s=>`<li>${s}</li>`).join("")}</ul></div>
+ <div class="card result-section"><h3>Как читать этот результат</h3><p>Твой профиль собран из выбранных ответов по шести направлениям: привычки, ситуации прослушивания, эмоции, воспоминания, общение и самоощущение. Он описывает ответы именно в этом опросе и не является неизменным типом личности. Музыкальные предпочтения могут меняться со временем и в разных обстоятельствах.</p><p class="disclaimer">Важно: результат предназначен для саморефлексии и развлечения. Опрос не является психологическим тестированием, медицинской рекомендацией или научно подтверждённой диагностикой.</p></div>`;
+ show("results");
+}
+</script>
+</body>
+</html>
